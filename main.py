@@ -1,17 +1,7 @@
 from tinydb import TinyDB
-import requests
-import api
+from api import data
 
 db = TinyDB('data.json', indent=4)
-url=api.base_url
-def data(n):
-    param={
-        'X-Api-Key':'7b3b6035a5c94aee8908aaa68c9a6fe4',
-        'results':n
-    }
-    r=requests.get(url,params=param)
-    data=r.json()
-    return data['results']
 
 data=data(50)
 
